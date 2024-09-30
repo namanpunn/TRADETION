@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import stockImage from '/public/images/stock.png'
 
 const ComingSoon: React.FC = () => {
   const [timeLeft, setTimeLeft] = useState<{ days: number; hours: number; minutes: number; seconds: number } | null>(null);
@@ -41,7 +40,7 @@ const ComingSoon: React.FC = () => {
   return (
     <div
       className="flex flex-col items-center justify-center w-full md:h-[85vh] text-white px-4 bg-cover bg-no-repeat"
-      style={{ backgroundImage: `url(${stockImage.src})` }}
+      style={{ backgroundImage: 'url("images/stock.png")' }}
     >
       {/* Header */}
       <header className="text-center mb-10 animate-fadeIn pt-12 md:pt-24">
