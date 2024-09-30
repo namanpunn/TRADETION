@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import stockImage from '/public/images/stock.png'
+import stockImage from '/images/stock.png'
 
 const ComingSoon: React.FC = () => {
   const [timeLeft, setTimeLeft] = useState<{ days: number; hours: number; minutes: number; seconds: number } | null>(null);
