@@ -1,11 +1,17 @@
-'use client';
+'use client'; // if required for Next.js or a specific use case
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import emailjs from '@emailjs/browser';
 
 const Footer: React.FC = () => {
     const [email, setEmail] = useState<string>('');
     const [submitted, setSubmitted] = useState<boolean>(false);
     const [error, setError] = useState<string>('');
+
+    useEffect(() => {
+        // Initialize EmailJS here
+        emailjs.init("R-OLKMSNiwB8up4_W");
+    }, []); // Runs only once when the component mounts
 
     const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setEmail(e.target.value);
@@ -13,10 +19,40 @@ const Footer: React.FC = () => {
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+
+        // Get already subscribed emails from local storage
+        const subscribedEmails = JSON.parse(localStorage.getItem('subscribedEmails') || '[]');
+
+        console.log('Current email:', email);
+        console.log('Subscribed emails:', subscribedEmails);
+
         if (validateEmail(email)) {
-            setSubmitted(true);
-            setError('');
-            setEmail(''); // Clear input after submission
+            if (subscribedEmails.includes(email)) {
+                setError('This email has already subscribed.');
+                console.log('Email already subscribed:', email);
+            } else {
+                setSubmitted(true);
+                setError('');
+
+                // Add the email to the list of subscribed emails
+                subscribedEmails.push(email);
+                localStorage.setItem('subscribedEmails', JSON.stringify(subscribedEmails));
+
+                // Send email using EmailJS
+                const templateParams = {
+                    emailId: email,  // Match this with {{emailId}} in your EmailJS template
+                };
+
+                emailjs.send('service_v0j3fpk', 'template_5lvblm8', templateParams)
+                    .then((response) => {
+                        console.log('SUCCESS!', response.status, response.text);
+                        setEmail(''); // Clear input after submission
+                    })
+                    .catch((err) => {
+                        console.error('FAILED to send email:', err);
+                        setError('Failed to send email. Please try again later.');
+                    });
+            }
         } else {
             setError('Please enter a valid email address.');
         }
