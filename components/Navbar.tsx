@@ -6,7 +6,7 @@ const Navbar: React.FC = () => {
       {/* Left Section: Logo */}
       <div className="flex items-center space-x-4">
         <h1 className="text-3xl font-extrabold text-blue-900">
-          <span className="text-red-600">JSR</span> Fintech
+          <span className="text-red-600">Trade</span>tion
         </h1>
       </div>
 

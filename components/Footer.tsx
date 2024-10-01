@@ -43,7 +43,7 @@ const Footer: React.FC = () => {
                     emailId: email,  // Match this with {{emailId}} in your EmailJS template
                 };
 
-                emailjs.send('service_v0j3fpk', 'template_5lvblm8', templateParams)
+                emailjs.send('service_bsfcq6o', 'template_5lvblm8', templateParams)
                     .then((response) => {
                         console.log('SUCCESS!', response.status, response.text);
                         setEmail(''); // Clear input after submission
@@ -68,7 +68,7 @@ const Footer: React.FC = () => {
             <div className="mx-auto max-w-screen-xl px-4 py-7 sm:px-6 lg:px-8">
                 <div className="lg:flex lg:items-start lg:gap-8">
                     <div className="text-white text-3xl font-bold">
-                        JSR FINTECH
+                        TRADING INSIGHT
                     </div>
 
                     <div className="mt-8 grid grid-cols-2 gap-8 lg:mt-0 lg:grid-cols-5">
@@ -120,7 +120,7 @@ const Footer: React.FC = () => {
 
                 <div className="mt-8 flex flex-col items-center border-t border-gray-100 pt-8">
                     <p className="text-sm text-white text-center">
-                        &copy; 2024 JSR FINTECH. All rights reserved.
+                        &copy; 2024 Tradetion. All rights reserved.
                     </p>
 
                     <div className="flex space-x-6 mt-4">

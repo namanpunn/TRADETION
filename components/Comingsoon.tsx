@@ -8,7 +8,7 @@ const ComingSoon: React.FC = () => {
     setMounted(true);
 
     const calculateTimeLeft = () => {
-      const launchDate = new Date('2024-11-01').getTime();
+      const launchDate = new Date('2024-11-16').getTime();
       const currentTime = new Date().getTime();
       const difference = launchDate - currentTime;
 
@@ -45,7 +45,7 @@ const ComingSoon: React.FC = () => {
       {/* Header */}
       <header className="text-center mb-10 animate-fadeIn pt-12 md:pt-24">
         <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-lg">
-          JSR FINTECH
+          TRADETION
         </h1>
         <p className="text-base md:text-lg mt-4 opacity-80">Stock Market Trading at Your Fingertips</p>
       </header>
@@ -95,7 +95,7 @@ const ComingSoon: React.FC = () => {
 
       {/* Footer */}
       <footer className="text-center mt-auto mb-4">
-        <p className="text-xs opacity-70">&copy; 2024 JSR Fintech. All rights reserved.</p>
+        <p className="text-xs opacity-70">&copy; 2024 Tradetion. All rights reserved.</p>
       </footer>
     </div>
   );
