@@ -21,7 +21,7 @@ const Navbar: React.FC = () => {
       {/* Right Section: Contact */}
       <div className="hidden lg:flex bg-[#D12A34] text-white px-6 py-3 rounded-lg items-center shadow-md md:h-[4.25rem] md:w-[28rem] md:px-32 md:rounded-none ">
         <a href="mailto:info@jsrfintech.com" className="font-semibold md:text-nowrap">
-          Contact Us: info@jsrfintech.com
+          Contact Us: info@tradetion.com
         </a>
       </div>
 
