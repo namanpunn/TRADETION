@@ -39,8 +39,8 @@ const ComingSoon: React.FC = () => {
 
   return (
     <div
-      className="flex flex-col items-center justify-center w-full md:h-[85vh] text-white px-4 bg-cover bg-no-repeat"
-      style={{ backgroundImage: 'url("/images/stock.png")' }}
+      className="bg-heroBg flex flex-col items-center justify-center w-full md:h-[85vh] text-white px-4 bg-cover bg-no-repeat"
+      // style={{ backgroundImage: 'url("/images/stock.png")' }}
     >
       {/* Header */}
       <header className="text-center mb-10 animate-fadeIn pt-12 md:pt-24">
